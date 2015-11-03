@@ -13,18 +13,18 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase {
     {
         parent::setUp();
 
-        $this->store = $this->getMockBuilder('Illuminate\Session\Store')
-            ->setMethods(['get', 'set', 'clear'])
-            ->getMock();
+        //$this->store = $this->getMockBuilder('Illuminate\Session\Store')
+        //    ->setMethods(['get', 'set', 'clear'])
+        //    ->getMock();
 
         //$notifications = $this->getMockBuilder('Code4\Notifications\Notifications')->setMethods();
 
         //$engine = $this->getMockBuilder('Code4\Notifications\Engines\EngineInterface')->getMock();
         //$engine->setMethods(['put','get','count','clear'])->method('get')->willReturn('foo');
 
-        $config = ['defaultStore' => 'session', 'autoCleanOnGet' => true, 'engine' => $this->engine];
+        //$config = ['defaultStore' => 'session', 'autoCleanOnGet' => true, 'engine' => $this->engine];
 
-        $this->notifications = new Notifications($config);
+        //$this->notifications = new Notifications($config);
 
     }
 
