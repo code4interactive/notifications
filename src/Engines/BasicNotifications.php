@@ -72,7 +72,7 @@ class BasicNotifications implements EngineInterface {
     public function get($type = null, $clear = null) {
         $notifications = [];
 
-        if ($type == null) {
+        if ($type === null) {
             $notifications = $this->all();
         } else {
             foreach ($this->notifications as $notification) {
@@ -94,10 +94,10 @@ class BasicNotifications implements EngineInterface {
      * @return int
      */
     public function count($type = null) {
-        if ($type) {
-            return count($this->get($type));
-        } else {
+        if ($type === null) {
             return count($this->notifications);
+        } else {
+            return count($this->get($type));
         }
     }
 
@@ -149,11 +149,11 @@ class BasicNotifications implements EngineInterface {
 
     /**
      * Decides is data has to be cleared
-     * @param $clear
+     * @param bool|null $clear
      * @return bool
      */
     private function isDataHasToBeCleared($clear) {
-        if (is_null($clear)) { $clear = $this->autoClearOnGet; }
+        if ($clear === null) { $clear = $this->autoClearOnGet; }
         return $clear;
     }
 
@@ -162,7 +162,7 @@ class BasicNotifications implements EngineInterface {
      * @param string|null $type
      */
     public function clear($type = null) {
-        if ($type) {
+        if ($type !== null) {
             foreach($this->notifications as $key => $notification) {
                 if ($notification['type'] == $type) {
                     unset($this->notifications[$key]);
