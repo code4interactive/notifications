@@ -100,7 +100,12 @@ class Notifications {
     public function __call($method, $parameters)
     {
         list($message, $bag) = $this->parseParameters($parameters);
-        return $this->bag($bag)->put($method, $message);
+        $icon = null;
+        if (array_key_exists($method, $this->config['icons'])) {
+            $icon = $this->config['icons'][$method];
+        }
+
+        return $this->bag($bag)->put($method, $message, $icon);
     }
 
 

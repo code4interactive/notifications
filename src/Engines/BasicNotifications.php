@@ -49,10 +49,11 @@ class BasicNotifications implements EngineInterface {
      * Executes callback
      * @param string $type
      * @param string $notification
+     * @param string|null $icon
      * @return EngineInterface
      */
-    public function put($type, $notification) {
-        $this->notifications[] = ['type' => $type, 'notification' => $notification];
+    public function put($type, $notification, $icon = null) {
+        $this->notifications[] = ['type' => $type, 'notification' => $notification, 'icon' => $icon];
 
         //Callback
         if (array_key_exists($type, $this->closures)) {

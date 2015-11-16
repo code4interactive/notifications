@@ -11,6 +11,12 @@ return [
         'notice'  => 'notice',
         'warning' => 'warning',
         'success' => 'success'
+    ],
+    'icons' => [
+        'error'   => 'fa-times',
+        'notice'  => 'fa-info',
+        'warning' => 'fa-exclamation',
+        'success' => 'fa-check'
     ]
 
 ];
