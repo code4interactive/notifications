@@ -33,7 +33,7 @@ class NotificationsServiceProvider extends ServiceProvider {
 
     private function registerAliases() {
         $aliasLoader = AliasLoader::getInstance();
-        $aliasLoader->alias('Notifications', Facades\Notifications::class);
+        $aliasLoader->alias('Alert', Facades\Notifications::class);
     }
 
 
