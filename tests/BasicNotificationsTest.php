@@ -27,12 +27,12 @@ class BasicNotificationsTest extends \PHPUnit_Framework_TestCase {
         $this->notifications->put('error', 'error1');
         $this->notifications->put('error', 'error2');
         $this->notifications->put('notice', 'notice1');
-        $this->assertEquals([['type'=>'error', 'notification'=>'error1'],['type'=>'error', 'notification'=>'error2']], $this->notifications->get('error', false));
+        $this->assertEquals([['type'=>'error', 'notification'=>'error1', 'icon' => null],['type'=>'error', 'notification'=>'error2', 'icon' => null]], $this->notifications->get('error', false));
         $this->assertEquals([], $this->notifications->get('notExistingType'));
         $this->assertSame([
-            ['type'=>'error', 'notification'=>'error1'],
-            ['type'=>'error', 'notification'=>'error2'],
-            ['type'=>'notice', 'notification'=>'notice1']
+            ['type'=>'error', 'notification'=>'error1', 'icon' => null],
+            ['type'=>'error', 'notification'=>'error2', 'icon' => null],
+            ['type'=>'notice', 'notification'=>'notice1', 'icon' => null]
         ], $this->notifications->get());
     }
 
@@ -41,9 +41,9 @@ class BasicNotificationsTest extends \PHPUnit_Framework_TestCase {
         $this->notifications->put('error', 'error2');
         $this->notifications->put('notice', 'notice1');
         $this->assertSame([
-            ['type'=>'error', 'notification'=>'error1'],
-            ['type'=>'error', 'notification'=>'error2'],
-            ['type'=>'notice', 'notification'=>'notice1']
+            ['type'=>'error', 'notification'=>'error1', 'icon' => null],
+            ['type'=>'error', 'notification'=>'error2', 'icon' => null],
+            ['type'=>'notice', 'notification'=>'notice1', 'icon' => null]
         ], $this->notifications->all());
     }
 
