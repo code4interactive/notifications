@@ -72,10 +72,11 @@ class Notifications {
 
     /**
      * Shortcut method for default bag
+     * @param null|bool $clear
      * @return mixed
      */
-    public function all() {
-        return $this->bag()->get();
+    public function all($clear = null) {
+        return $this->bag()->all($clear);
     }
 
     /**

@@ -36,7 +36,7 @@ class SessionStore implements StorageInterface {
      * @inheritdoc
      */
     public function clear($key) {
-        $this->session->remove($key);
+        $this->session->forget($key);
     }
 
 }

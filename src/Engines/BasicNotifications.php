@@ -174,6 +174,7 @@ class BasicNotifications implements EngineInterface {
         } else {
             $this->notifications = [];
         }
+        $this->store->clear('notifications.'.$this->name);
         $this->store();
     }
 }
